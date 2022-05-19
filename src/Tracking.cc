@@ -32,6 +32,7 @@
 
 #include "Tracking.h"
 #include <opencv2/core/core.hpp>
+#include <opencv2/imgproc/types_c.h>
 #include <opencv2/features2d/features2d.hpp>
 
 #include "ORBmatcher.h"
@@ -251,7 +252,7 @@ cv::Mat Tracking::GrabImageStereo(
     {
         if(mbRGB)
         {
-            cvtColor(mImGray,mImGray,CV_RGB2GRAY);
+            cvtColor(mImGray,mImGray,cv::COLOR_RGB2GRAY);
             cvtColor(imGrayRight,imGrayRight,CV_RGB2GRAY);
         }
         else

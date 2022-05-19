@@ -26,6 +26,7 @@
 #include<chrono>
 
 #include<opencv2/core/core.hpp>
+#include<opencv2/imgcodecs.hpp>
 
 #include<System.h>
 #include<unistd.h>
@@ -157,8 +158,8 @@ int main(int argc, char **argv)
     {
         // Read left and right images from file
         // step 4.1 读取原始图像
-        imLeft = cv::imread(vstrImageLeft[ni],CV_LOAD_IMAGE_UNCHANGED);
-        imRight = cv::imread(vstrImageRight[ni],CV_LOAD_IMAGE_UNCHANGED);
+        imLeft = cv::imread(vstrImageLeft[ni],cv::IMREAD_UNCHANGED);
+        imRight = cv::imread(vstrImageRight[ni],cv::IMREAD_UNCHANGED);
 
         //合法性检查
         if(imLeft.empty())
